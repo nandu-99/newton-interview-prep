@@ -307,3 +307,25 @@ const add = a => b => a + b;
 
 - **Promise.all()** waits for all promises to resolve or any to reject.
 - **Promise.race()** resolves/rejects as soon as one of the promises resolves/rejects.
+
+---
+
+## One-Line Definitions
+
+* **JavaScript** → high-level, interpreted language for interactive web effects.
+* **var** → function-scoped variable, hoisted.
+* **let** → block-scoped variable, can be reassigned.
+* **const** → block-scoped variable, cannot be reassigned.
+* **Hoisting** → moving declarations to the top of their scope before execution.
+* **Lexical Scoping** → variables resolved by their defined scope, not calling scope.
+* **== vs ===** → loose equality (with coercion) vs strict equality (no coercion).
+* **Arrow Functions** → shorter syntax, do not have their own `this`.
+* **Spread Operator (...)** → expands arrays/objects into individual elements.
+* **Rest Operator (...)** → collects remaining elements into an array.
+* **Synchronous** → runs sequentially, one task at a time.
+* **Asynchronous** → runs in parallel or deferred, allowing other tasks to continue.
+* **Closures** → inner function retains access to outer function's scope.
+* **Promises** → represent eventual completion/failure of an async operation.
+* **this** → refers to the object currently executing the function.
+* **Event Delegation** → single listener on parent handles events for children.
+* **Event Loop** → handles async code by pushing tasks from callback queue to call stack.

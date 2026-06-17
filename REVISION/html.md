@@ -506,3 +506,24 @@ Example:
 3. **Form Enhancements**: New input types (e.g., `email`, `date`, `number`) and attributes (e.g., `placeholder`, `required`, `pattern`) improve form validation and user experience.
 4. **Canvas and Graphics**: The `<canvas>` element allows for dynamic rendering of 2D graphics and animations directly in the browser using JavaScript.
 5. **Local Storage**: Introduces Web Storage APIs (localStorage and sessionStorage) for storing data on the client side, enabling offline capabilities and persistent storage.
+
+---
+
+## One-Line Definitions
+
+* **HTML** → standard markup language for creating web pages.
+* **Markup Language** → uses tags to structure and present content.
+* **<!DOCTYPE html>** → defines document type and triggers standards mode.
+* **Tags vs Attributes** → tags define elements, attributes provide additional info.
+* **<title>** → sets the title of the web page in the browser tab.
+* **<div>** → block-level container for grouping content.
+* **Comments** → `<!-- -->` used to add non-visible notes.
+* **Absolute vs Relative URL** → absolute includes domain, relative is based on current location.
+* **Semantic Tags** → clearly describe their meaning (e.g., `<article>`).
+* **Non-semantic Tags** → do not describe their meaning (e.g., `<div>`).
+* **Inline Elements** → take only needed space, don't start a new line.
+* **Block Elements** → take full width, start on a new line.
+* **<meta>** → provides metadata like charset and description.
+* **<iframe>** → embeds another webpage inside the current page.
+* **Void Elements** → self-closing tags that do not require a closing tag.
+* **DOM** → Document Object Model representing HTML as a tree.

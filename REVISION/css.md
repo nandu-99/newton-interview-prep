@@ -486,3 +486,24 @@ div + p { /* Adjacent sibling */
   color: blue;
 }
 ```
+
+---
+
+## One-Line Definitions
+
+* **CSS** → styles HTML elements by controlling layout, colors, and fonts.
+* **Box Model** → defines element structure: content, padding, border, margin.
+* **Block Display** → element takes full width and starts on a new line.
+* **Inline Display** → element takes only needed width and stays in flow.
+* **box-sizing: border-box** → includes padding and border in element's total size.
+* **Padding** → space between content and border.
+* **Margin** → space outside the border.
+* **z-index** → controls the stack order of positioned elements.
+* **display: none** → removes element entirely from layout.
+* **visibility: hidden** → hides element but keeps its space.
+* **Flexbox** → one-dimensional layout module for rows or columns.
+* **Grid** → two-dimensional layout module for rows and columns.
+* **Media Queries** → apply styles based on screen size for responsive design.
+* **Pseudo-classes** → target elements based on state (e.g., `:hover`).
+* **Specificity** → determines which CSS rules take precedence.
+* **CSS Combinators** → define relationships between elements (e.g., child, adjacent).
