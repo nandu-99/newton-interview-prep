@@ -10,21 +10,38 @@
 arr = list(map(int, input().split()))
 k = int(input())
 
+# def longest_subarray(arr, k):
+#     n = len(arr)
+#     maxi = 0 
+#     left =0 
+#     right = 0 
+#     summ = arr[0]
+#     while right<n:
+#         while left<=right and summ>k:
+#             summ-=arr[left]
+#             left+=1 
+#         if summ==k:
+#             maxi = max(maxi, right-left+1)
+#         right+=1 
+#         if right<n:
+#             summ+=arr[right]
+#     return maxi ]
+
 def longest_subarray(arr, k):
-    n = len(arr)
-    maxi = 0 
-    left =0 
-    right = 0 
-    summ = arr[0]
-    while right<n:
-        while left<=right and summ>k:
-            summ-=arr[left]
-            left+=1 
+    summ = 0 
+    maxi =0 
+    d = {} 
+    for i in range(len(arr)):
+        summ+=arr[i]
         if summ==k:
-            maxi = max(maxi, right-left+1)
-        right+=1 
-        if right<n:
-            summ+=arr[right]
+            maxi = i+1 
+        rem = summ-k 
+        if rem in d:
+            leng = i-d[rem]
+            maxi = max(maxi, leng)
+        if summ not in d:
+            d[summ] = i 
     return maxi 
+
 
 print(longest_subarray(arr, k))

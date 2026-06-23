@@ -17,6 +17,8 @@ def kadane(arr):
     for i in arr:
         curr+=i 
         maxi = max(maxi, curr)
+        if curr<0:
+            curr = 0
     return maxi 
 
 print(kadane(arr))
