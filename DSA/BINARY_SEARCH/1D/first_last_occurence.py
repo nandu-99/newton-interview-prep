@@ -18,4 +18,24 @@ def first_occurence(arr, x):
         if arr[m]==x:
             ans = m 
             h = m-1 
-        elif arr[m]
+        elif arr[m]<x:
+            l = m+1 
+        else:
+            h = m-1 
+    return ans 
+
+def last_occerence(arr, x):
+    l, h = 0, len(arr)-1 
+    ans = -1
+    while l<=h:
+        m = (l+h)//2 
+        if arr[m]==x:
+            ans = m 
+            l = m+1 
+        elif arr[m]<x:
+            l = m+1
+        else:
+            h = m-1 
+    return ans
+
+print(first_occurence(arr, x), last_occerence(arr, x))
