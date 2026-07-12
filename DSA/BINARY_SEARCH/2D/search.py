@@ -6,7 +6,7 @@
 # Output :True.
 # Explanation :The target = 8 exists in the 'mat' at index (1, 3).
 
-matrix = [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12] ]
+mat = [ [1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12] ]
 x = int(input())
 
 def search(matrix, x):
@@ -28,4 +28,4 @@ def search(matrix, x):
             h = mid-1 
     return False 
 
-print(search(matrix, x))
+print(search(mat, x))
