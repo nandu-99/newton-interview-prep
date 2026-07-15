@@ -305,7 +305,115 @@ Create → Use → Unreachable → Garbage Collected
 
 ---
 
-## One-Line Definitions
+## Object-Oriented Design Concepts
+
+### SOLID Principles
+
+```text
+S → Single Responsibility Principle
+O → Open/Closed Principle
+L → Liskov Substitution Principle
+I → Interface Segregation Principle
+D → Dependency Inversion Principle
+```
+
+* **SRP** → A class should have only one reason to change. One class = one job.
+  ```java
+  // Bad: Invoice class handles both calculation AND printing
+  // Good: InvoiceCalculator + InvoicePrinter — separate classes
+  ```
+
+* **OCP** → Open for extension, closed for modification. Add new behavior by adding new code, not changing existing code.
+  ```java
+  // Add new shapes by creating new classes, not editing existing ones
+  ```
+
+* **LSP** → A child class must be substitutable for its parent without breaking behavior.
+  ```java
+  Player p = new Batsman();   // Batsman should behave correctly as a Player
+  ```
+
+* **ISP** → Don't force a class to implement methods it doesn't need. Prefer small, specific interfaces over one large one.
+  ```java
+  // Bad: one fat Athlete interface with swim(), run(), shoot()
+  // Good: Swimmer, Runner, Shooter — separate interfaces
+  ```
+
+* **DIP** → Depend on abstractions, not concrete classes.
+  ```java
+  // Bad: Engine e = new PetrolEngine();
+  // Good: Engine e = new ElectricEngine();  // Engine is an interface
+  ```
+
+---
+
+### Cohesion and Coupling
+
+```text
+High Cohesion  → good (class does one focused thing)
+Low Coupling   → good (classes depend on each other as little as possible)
+```
+
+* **Cohesion** → how focused a class is. A `Player` class that only manages player data = high cohesion.
+* **Coupling** → how much one class depends on another. Tightly coupled classes break together; loosely coupled classes change independently.
+
+**Goal → High Cohesion + Low Coupling**
+
+---
+
+### Design Principles (DRY, KISS, YAGNI)
+
+* **DRY** (Don't Repeat Yourself) → one piece of logic in one place; avoid copy-paste code.
+* **KISS** (Keep It Simple, Stupid) → prefer the simplest solution that works.
+* **YAGNI** (You Aren't Gonna Need It) → don't add features until they are actually needed.
+
+---
+
+### Common Design Patterns
+
+Patterns are reusable solutions to common design problems.
+
+```text
+Creational  → how objects are created
+Structural  → how classes/objects are composed
+Behavioral  → how objects communicate
+```
+
+**Creational**
+
+* **Singleton** → only one instance of a class exists.
+  ```java
+  class Config {
+      private static Config instance;
+      private Config() {}
+      public static Config getInstance() {
+          if (instance == null) instance = new Config();
+          return instance;
+      }
+  }
+  ```
+
+* **Factory** → a method/class creates objects without exposing creation logic.
+  ```java
+  Player p = PlayerFactory.create("batsman");
+  ```
+
+**Structural**
+
+* **Decorator** → add behavior to an object at runtime without changing its class.
+* **Adapter** → makes incompatible interfaces work together (like a power plug adapter).
+
+**Behavioral**
+
+* **Observer** → one object (subject) notifies many objects (observers) when its state changes. Example: event listeners.
+* **Strategy** → define a family of algorithms, encapsulate each one, and make them interchangeable at runtime.
+  ```java
+  // SortStrategy can be BubbleSort or QuickSort — swap without changing the calling code
+  ```
+
+---
+
+
 
 * **Class** → blueprint used to create objects.
 * **Object** → instance of a class with data and behavior.
