@@ -1,4 +1,4 @@
-# OOP Master Revision Notes
+# OOPs Master Revision Notes
 
 ## Why OOP?
 
