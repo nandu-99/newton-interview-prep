@@ -26,7 +26,7 @@ Example:
 ```jsx
 // Functional
 function Greeting({ name }) {
-  return <h1>Hello, {name}</h1>;
+  return <h1>Hiii, {name}</h1>;
 }
 
 // Class
