@@ -1,6 +1,6 @@
 # OS Master Revision Notes
 
-## Introduction to Operating Systems
+## Introduction to Operating Systems (OS)
 
 An **Operating System** is system software that acts as an intermediary between the user and hardware. It manages hardware resources and provides services to programs.
 
