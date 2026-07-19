@@ -19,7 +19,7 @@ Example:
 Example:
 
 ```html
-<p>This is a paragraph.</p>
+<p>This is a paragraph...</p>
 ```
 
 ### 3. What is the difference between HTML tags and attributes?
