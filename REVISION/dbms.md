@@ -457,6 +457,110 @@ ROLLBACK TO sp1;
 
 ---
 
+## MongoDB vs MySQL — When to Use Which
+
+**MySQL** = RDBMS, stores data in **tables** with a fixed schema. **MongoDB** = NoSQL (document store), stores data as flexible **JSON-like documents**.
+
+```text
+MySQL   → tables, rows, columns, fixed schema
+MongoDB → collections, documents, flexible schema
+```
+
+### Structure Comparison
+
+| MySQL (SQL) | MongoDB (NoSQL) |
+| ----------- | ---------------- |
+| Database | Database |
+| Table | Collection |
+| Row | Document |
+| Column | Field |
+| Primary Key | `_id` |
+| JOIN | Embedding / `$lookup` |
+
+```sql
+-- MySQL row
+SELECT * FROM Student WHERE id = 1;
+```
+
+```js
+// MongoDB document
+db.students.findOne({ _id: 1 })
+// { _id: 1, name: "Alice", age: 20, hobbies: ["chess", "reading"] }
+```
+
+### Schema
+
+```text
+MySQL   → schema defined upfront, every row must match (rigid)
+MongoDB → schema-less, each document can have different fields (flexible)
+```
+
+* MySQL → good when data structure is stable and well-known in advance.
+* MongoDB → good when data is evolving, varied, or nested/hierarchical.
+
+### Relationships
+
+```text
+MySQL   → normalized, related via foreign keys + JOINs
+MongoDB → denormalized, related data often embedded in one document
+```
+
+```js
+// MongoDB — embed instead of join
+{
+  _id: 1,
+  name: "Alice",
+  orders: [
+    { item: "Book", price: 200 },
+    { item: "Pen",  price: 20 }
+  ]
+}
+```
+
+### ACID & Consistency
+
+| MySQL | MongoDB |
+| ----- | ------- |
+| Full ACID across multi-row/table transactions | ACID at single-document level (multi-document transactions supported but costlier) |
+| Strong consistency by default | Tunable consistency (can favor availability) |
+
+### Scaling
+
+```text
+MySQL   → scales vertically (bigger server); horizontal scaling (sharding) is harder
+MongoDB → built for horizontal scaling (sharding) across many servers
+```
+
+### When to use MySQL
+
+* Data is structured, relational, and unlikely to change shape (e.g., banking, ERP, inventory).
+* Strong ACID transactions across multiple tables are required (e.g., financial transfers).
+* Complex queries with JOINs, aggregations across many related tables.
+* Reporting / BI tools that expect SQL.
+
+### When to use MongoDB
+
+* Data is unstructured or evolving (e.g., product catalogs with varying attributes, user-generated content).
+* Need to scale horizontally across many servers (huge write/read volume).
+* Data is naturally hierarchical/nested (e.g., a single "profile" document with nested arrays).
+* Rapid development where schema changes frequently (startups, prototypes).
+* Read-heavy workloads where embedding avoids expensive JOINs.
+
+### Summary Table
+
+| Need | Choice |
+| ---- | ------ |
+| Strict schema + relationships | MySQL |
+| Multi-table ACID transactions | MySQL |
+| Flexible/evolving schema | MongoDB |
+| Massive horizontal scale | MongoDB |
+| Nested/hierarchical data | MongoDB |
+| Heavy JOIN-based reporting | MySQL |
+
+**Trick:** MySQL = filing cabinet with labeled folders (fixed structure). MongoDB = a box where each item can be wrapped differently (flexible structure).
+
+---
+
 ## One-Line Definitions
 
 * **DBMS** → software to store, manage, and retrieve data.
@@ -482,3 +586,7 @@ ROLLBACK TO sp1;
 * **Durability** → committed data survives crashes.
 * **Dirty Read** → reading another transaction's uncommitted data.
 * **Serializable** → highest isolation; transactions run as if sequential.
+* **NoSQL** → non-relational database (e.g., MongoDB); flexible schema, document/key-value/graph based.
+* **Document** → MongoDB's equivalent of a row; a JSON-like record with a `_id`.
+* **Embedding** → storing related data inside one document instead of joining tables.
+* **Sharding** → splitting data across multiple servers for horizontal scaling.
