@@ -17,6 +17,19 @@
 
 # A string a is lexicographically larger than a string b if, at the first position where they differ, a contains a letter that appears later in the alphabet than the corresponding letter in b. If the first min(a.length, b.length) characters are equal, the longer string is lexicographically larger.
 
+# Example 1:
+
+# Input: nums = [2,5,7]
+
+# Output: ["b","ca","cba"]
+
+# Explanation:
+
+# nums[0] = 2: "aa" → "b".
+# nums[1] = 5: "aaaaa" → "baaa" → "bba" → "ca".
+# nums[2] = 7: "aaaaaaa" → "baaaaa" → "bbaaa" → "bbba" → "cba".
+# Therefore, ans = ["b", "ca", "cba"].
+
 class Solution:
     def largestString(self, nums: list[int]) -> list[str]:
         ans = []

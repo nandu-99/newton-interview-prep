@@ -12,6 +12,12 @@
 # Return the minimum number of moves for the bishop to land exactly on target. If it can never reach target, return -1.
 
 
+# Example 1:
+
+# Input: source = [8,1], target = [1,8]
+
+# Output: 1
+
 def minBishopMoves(self, source: list[int], target: list[int]) -> int:
     sc_color = sum(source)%2 
     tc_color = sum(target)%2 

@@ -18,6 +18,23 @@
 
 # Here, gcd(a) denotes the greatest common divisor of all elements in the array a.
 
+# Example 1:
+
+# Input: nums = [10,30,15,10]
+
+# Output: 2
+
+# Explanation:
+
+# One optimal solution is to remove nums[2] = 15. Then arr = [10, 30, 10].
+
+# The split positions are:
+
+# Split Position i	gcd(arr[0..i])	gcd(arr[i + 1..m - 1])
+# 0	10	10
+# 1	10	10
+# All split positions are valid. Thus, the answer is 2.
+
 from math import gcd
 
 class Solution:
