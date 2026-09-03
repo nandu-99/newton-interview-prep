@@ -17,6 +17,19 @@
 
 # The floor() function returns the integer part of the division.
 
+
+# Example 1:
+
+# Input: nums = [231]
+
+# Output: 8
+
+# Explanation:
+
+# For 231, we have width = 1, d = 23, x = 2, and y = 3.
+# The decoded value of 231 is 23 = 8.
+# Since there is only one element in nums, the sum of the decoded values is 8.
+
 class Solution:
     def sumDecoded(self, nums: list[int]) -> int:
         ans = 0 

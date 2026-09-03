@@ -11,6 +11,18 @@
 
 # The floor() function returns the integer part of the division.
 
+# Example 1:
+
+# Input: nums = [5,6,10], sum = 4
+
+# Output: 3
+
+# Explanation:
+
+# Divide nums[0] = 5 twice: 5 → 2 → 1, costing 2 operations.
+# Divide nums[1] = 6 once: 6 → 3, costing 1 operation.
+# After these operations, nums = [1, 3, 10]. The subset {1, 3} sums to 4 using 3 operations in total.
+
 class Solution:
     def minOperations(self, nums: list[int], sum: int) -> int:
         # d = {}
